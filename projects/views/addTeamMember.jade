@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  body
+    .form-container
+      h2 Add Team Memeber
+      form(action='/add-teammember/#{project._id}', method='POST', enctype='application/x-www-form-urlencoded')
+        input(type="text" id="projectId" name="projectId" value=project._id hidden)
+        label(for="user") User:
+        input(type="text" id="user" name="user" required)
+        button(type="submit") Add Team Member
+        a(href="/") 
+          button(type="button") Show Projects
